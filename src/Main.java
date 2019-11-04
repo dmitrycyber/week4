@@ -1,7 +1,39 @@
-import java.util.*;
+import com.ivoninsky.task1.*;
+
 
 public class Main {
     public static void main(String[] args) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*String[] names = new String[]{"Vasya", "Petya"};
         Map<Integer, String> map = new HashMap<>();
         for (int i = 0; i < names.length; i++) {
@@ -40,7 +72,7 @@ public class Main {
         map.put("Mogilev", 800_000);
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.printf("City %s, population %d%n", entry.getKey(), entry.getValue());
-        }*/
+        }
 
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
@@ -64,7 +96,7 @@ public class Main {
             b = true;
         }
 
-        System.out.println(b);
+        System.out.println(b);*/
 
 
 
