@@ -8,7 +8,6 @@ import java.util.Map;
 public class Picture {
     private List<Figure> list;
     private Map<String, Integer> map;
-    private Integer countOfFigures;
 
     public Picture (){
         this.list = new ArrayList();
@@ -28,7 +27,7 @@ public class Picture {
 
     public Map getMapWithNamesAndCountOfFigures(){
         for (int i = 0; i < list.size(); i++) {
-            countOfFigures = 0;
+            Integer countOfFigures = 0;
             for (int j = 0; j < list.size(); j++) {
                 if (list.get(j).getName().equals(list.get(i).getName())) {
                     countOfFigures += 1;
