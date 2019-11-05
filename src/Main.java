@@ -7,10 +7,15 @@ public class Main {
         Figure f = new Square(7);
         Figure z = new Rectangle(5, 3);
         Figure u = new Circle(5);
+        Figure u1 = new Circle(6);
+        Figure o = new Sphere(5);
+
         p.addToList(f);
         p.addToList(z);
         p.addToList(u);
-        System.out.println(p.namesOfFigures());
+        p.addToList(u1);
+        p.addToList(o);
+        System.out.println(p.getMapWithNamesAndCountOfFigures());
 
 
 

@@ -1,13 +1,18 @@
 package com.ivoninsky.task1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Picture {
     private List<Figure> list;
+    private Map<String, Integer> map;
+    private Integer countOfFigures;
 
     public Picture (){
         this.list = new ArrayList();
+        this.map = new HashMap();
     }
 
     public List getList() {
@@ -17,6 +22,21 @@ public class Picture {
     public List addToList(Figure figure) {
         list.add(figure);
         return list;
+    }
+
+
+
+    public Map getMapWithNamesAndCountOfFigures(){
+        for (int i = 0; i < list.size(); i++) {
+            countOfFigures = 0;
+            for (int j = 0; j < list.size(); j++) {
+                if (list.get(j).getName().equals(list.get(i).getName())) {
+                    countOfFigures += 1;
+                }
+            }
+            map.put(list.get(i).getName(), countOfFigures);
+        }
+        return map;
     }
 
     public double sumPerimetersOfFigures() {
@@ -48,6 +68,8 @@ public class Picture {
         }
         return sum;
     }
+
+
 
 
 
