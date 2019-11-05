@@ -5,8 +5,5 @@ public abstract class Figure {
     public abstract String getName ();
     public abstract double getPerimeter();
     public abstract double getArea();
-    public double getVolume() {
-        return 0;
-    }
 
 }

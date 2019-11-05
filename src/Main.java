@@ -3,6 +3,14 @@ import com.ivoninsky.task1.*;
 
 public class Main {
     public static void main(String[] args) {
+        Picture p = new Picture();
+        Figure f = new Square(7);
+        Figure z = new Rectangle(5, 3);
+        Figure u = new Circle(5);
+        p.addToList(f);
+        p.addToList(z);
+        p.addToList(u);
+        System.out.println(p.namesOfFigures());
 
 
 

@@ -4,11 +4,13 @@ public class Square extends Figure {
     private int side;
 
     public Square(int side) {
+
         this.side = side;
     }
 
     @Override
     public String getName () {
+
         return "Square";
     }
 
@@ -19,6 +21,7 @@ public class Square extends Figure {
 
     @Override
     public double getArea () {
+
         return side * side;
     }
 
