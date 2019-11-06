@@ -1,10 +1,10 @@
 package com.ivoninsky.task1;
 
-public class Sphere extends Figure{
+public class Sphere extends Figure {
 
     private int radius;
 
-    public Sphere (int radius) {
+    public Sphere(int radius) {
         this.radius = radius;
     }
 
@@ -20,6 +20,7 @@ public class Sphere extends Figure{
 
     @Override
     public double getArea() {
+
         return 4 * Math.PI * radius * radius;
     }
 }

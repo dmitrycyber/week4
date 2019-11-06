@@ -1,9 +1,10 @@
 import com.ivoninsky.task1.*;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 
 public class Main {
     public static void main(String[] args) {
-        Picture p = new Picture();
+        /*Picture p = new Picture();
         Figure f = new Square(7);
         Figure z = new Rectangle(5, 3);
         Figure u = new Circle(5);
@@ -15,7 +16,10 @@ public class Main {
         p.addToList(u);
         p.addToList(u1);
         p.addToList(o);
-        System.out.println(p.getMapWithNamesAndCountOfFigures());
+        System.out.println(p.getMapWithNamesAndCountOfFigures());*/
+
+        Mathematics mathematics = new Mathematics();
+        System.out.println(mathematics.add("123", "345"));
 
 
 
@@ -112,17 +116,7 @@ public class Main {
         System.out.println(b);*/
 
 
-
         //System.out.println(set1.equals(set2));
-
-
-
-
-
-
-
-
-
 
 
     }
