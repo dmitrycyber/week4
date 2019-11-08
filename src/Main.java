@@ -24,11 +24,20 @@ public class Main {
         Ship ship1 = new Ship(3);
 
         ListOfShips listOfShips = new ListOfShips();
-        b.addShipsToField();
-        b.printField();
-        /*b.addShipToField(ship);
+        /*b.addShipsToField();
+        b.printField2();
+        System.out.println();*/
+
+
+        b.addShipToField(ship);
+        b.printField2();
+        System.out.println();
         b.addShipToField(ship1);
-        b.printField()*/;
+
+
+
+        b.printField2();
+        System.out.println(ship.getShip().length);
 
 
 
