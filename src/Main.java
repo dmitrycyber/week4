@@ -1,5 +1,5 @@
 import com.ivoninsky.task1.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import sun.security.provider.SHA;
 
 
 public class Main {
@@ -18,8 +18,22 @@ public class Main {
         p.addToList(o);
         System.out.println(p.getMapWithNamesAndCountOfFigures());*/
 
-        Mathematics mathematics = new Mathematics();
-        System.out.println(mathematics.add("123", "345"));
+
+        BattleShip2 b = new BattleShip2();
+        Ship ship = new Ship(4);
+        Ship ship1 = new Ship(3);
+
+        ListOfShips listOfShips = new ListOfShips();
+        b.addShipsToField();
+        b.printField();
+        /*b.addShipToField(ship);
+        b.addShipToField(ship1);
+        b.printField()*/;
+
+
+
+
+
 
 
 
