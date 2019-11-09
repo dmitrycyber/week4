@@ -26,13 +26,10 @@ public class ListOfShips {
         return list;
     }
 
-    /*public Ship getNextShip() {
+    public Ship getNextShip() {
         return list.remove(random.nextInt(list.size()));
-    }*/
-
-    public Ship getNextShip(int index) {
-        return list.get(index);
     }
+
 
 
 
