@@ -8,20 +8,18 @@ public class BattleShip {
     private int[][] field;
     private Random random = new Random();
     private List list;
-    private int countOfShips = 0;
 
     public BattleShip() {
         this.field = new int[10][10];
         this.list = new ArrayList<>();
     }
 
-    public void printField(){
+    public void printField() {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++) {
                 if (field[i][j] == 0 || field[i][j] == 2) {
                     System.out.print("  ");
-                }
-                else {
+                } else {
                     System.out.print("[]");
                 }
             }
@@ -29,7 +27,7 @@ public class BattleShip {
         }
     }
 
-    public void printField2(){
+    public void printField2() {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field.length; j++) {
                 System.out.print(field[i][j] + " ");
@@ -38,28 +36,28 @@ public class BattleShip {
         }
     }
 
-    public int[][] getField(){
+    public int[][] getField() {
+        addShipsToField();
         return field;
     }
 
-    public int[][] addShipToField(Ship ship) {
+    private int[][] addShipToField(Ship ship) {
         int elementPositionI;
         int elementPositionJ;
         int direction = random.nextInt(2);
-        if (direction == 1){
-            while (true){
+        if (direction == 1) {
+            while (true) {
                 elementPositionI = random.nextInt(10);
                 elementPositionJ = random.nextInt(10);
-                if (elementPositionJ + ship.getShip().length > 10){
+                if (elementPositionJ + ship.getShip().length > 10) {
                     continue;
-                }
-                else if (isCellsInaccessibleInHorizontalDirection(elementPositionI, elementPositionJ, ship)){
+                } else if (isCellsInaccessibleInHorizontalDirection(elementPositionI, elementPositionJ, ship)) {
                     continue;
                 }
                 break;
             }
             //PRINT SHIP ON FIELD
-            for (int j = elementPositionJ; j < elementPositionJ+ship.getShip().length; j++) {
+            for (int j = elementPositionJ; j < elementPositionJ + ship.getShip().length; j++) {
                 field[elementPositionI][j] = 1;
                 makeInaccessibleCellsAroundOfShip(elementPositionI, j, -1, -1);
                 makeInaccessibleCellsAroundOfShip(elementPositionI, j, -1, 1);
@@ -73,21 +71,19 @@ public class BattleShip {
             makeInaccessibleCellsAroundOfShip(elementPositionI, elementPositionJ, 0, ship.getShip().length);
 
             return field;
-        }
-        else {
-            while (true){
+        } else {
+            while (true) {
                 elementPositionI = random.nextInt(10);
                 elementPositionJ = random.nextInt(10);
-                if (elementPositionI + ship.getShip().length > 10){
+                if (elementPositionI + ship.getShip().length > 10) {
                     continue;
-                }
-                else if (isCellsInaccessibleInVerticalDirection(elementPositionI, elementPositionJ, ship)){
+                } else if (isCellsInaccessibleInVerticalDirection(elementPositionI, elementPositionJ, ship)) {
                     continue;
                 }
                 break;
             }
             //PRINT SHIP ON FIELD
-            for (int i = elementPositionI; i < elementPositionI+ship.getShip().length; i++) {
+            for (int i = elementPositionI; i < elementPositionI + ship.getShip().length; i++) {
                 field[i][elementPositionJ] = 1;
                 makeInaccessibleCellsAroundOfShip(i, elementPositionJ, -1, -1);
                 makeInaccessibleCellsAroundOfShip(i, elementPositionJ, -1, 1);
@@ -103,8 +99,8 @@ public class BattleShip {
         }
     }
 
-    public boolean isCellsInaccessibleInHorizontalDirection(int elementPositionI, int elementPositionJ, Ship ship){
-        for (int j = elementPositionJ; j < elementPositionJ+ship.getShip().length; j++) {
+    private boolean isCellsInaccessibleInHorizontalDirection(int elementPositionI, int elementPositionJ, Ship ship) {
+        for (int j = elementPositionJ; j < elementPositionJ + ship.getShip().length; j++) {
             if (field[elementPositionI][j] != 0) {
                 return true;
             }
@@ -112,8 +108,8 @@ public class BattleShip {
         return false;
     }
 
-    public boolean isCellsInaccessibleInVerticalDirection(int elementPositionI, int elementPositionJ, Ship ship){
-        for (int i = elementPositionI; i < elementPositionI+ship.getShip().length; i++) {
+    private boolean isCellsInaccessibleInVerticalDirection(int elementPositionI, int elementPositionJ, Ship ship) {
+        for (int i = elementPositionI; i < elementPositionI + ship.getShip().length; i++) {
             if (field[i][elementPositionJ] != 0) {
                 return true;
             }
@@ -138,13 +134,13 @@ public class BattleShip {
         }
     }
 
-    public int[][] addShipsToField() {
+    private void addShipsToField() {
         ListOfShips listOfShips = new ListOfShips();
-        listOfShips.addShipsToList();        
+        listOfShips.addShipsToList();
         for (int i = 0; i < 10; i++) {
             addShipToField(listOfShips.getNextShip());
-        }        
-        return field;
+        }
+
     }
 
 

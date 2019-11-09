@@ -9,18 +9,18 @@ public class Square extends Figure {
     }
 
     @Override
-    public String getName () {
+    public String getName() {
 
         return "Square";
     }
 
     @Override
-    public double getPerimeter () {
+    public double getPerimeter() {
         return side * 4;
     }
 
     @Override
-    public double getArea () {
+    public double getArea() {
 
         return side * side;
     }

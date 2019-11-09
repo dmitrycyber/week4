@@ -9,16 +9,16 @@ public class Picture {
     private List<Figure> list;
     private Map<String, Integer> map;
 
-    public Picture (){
+    public Picture() {
         this.list = new ArrayList();
         this.map = new HashMap();
     }
 
-    public void addToList(Figure figure) {
+    public void addToPicture(Figure figure) {
         list.add(figure);
     }
 
-    public Map getMapWithNamesAndCountOfFigures(){
+    public Map getMapWithNamesAndCountOfFigures() {
         for (int i = 0; i < list.size(); i++) {
             Integer countOfFigures = 0;
             for (int j = 0; j < list.size(); j++) {
@@ -60,13 +60,6 @@ public class Picture {
         }
         return sum;
     }
-
-
-
-
-
-
-
 
 
 }

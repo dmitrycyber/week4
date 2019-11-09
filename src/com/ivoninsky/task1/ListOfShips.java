@@ -12,7 +12,7 @@ public class ListOfShips {
         this.list = new ArrayList<>();
     }
 
-    public List addShipsToList(){
+    public List addShipsToList() {
         list.add(new Ship(4));
         list.add(new Ship(3));
         list.add(new Ship(3));
@@ -29,8 +29,6 @@ public class ListOfShips {
     public Ship getNextShip() {
         return list.remove(random.nextInt(list.size()));
     }
-
-
 
 
 }
