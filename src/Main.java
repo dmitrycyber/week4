@@ -4,40 +4,37 @@ import sun.security.provider.SHA;
 
 public class Main {
     public static void main(String[] args) {
-        /*Picture p = new Picture();
+        Picture p = new Picture();
         Figure f = new Square(7);
         Figure z = new Rectangle(5, 3);
         Figure u = new Circle(5);
         Figure u1 = new Circle(6);
         Figure o = new Sphere(5);
+        Figure i = new Square(2);
 
         p.addToList(f);
         p.addToList(z);
         p.addToList(u);
         p.addToList(u1);
         p.addToList(o);
-        System.out.println(p.getMapWithNamesAndCountOfFigures());*/
+        p.addToList(i);
+        System.out.println(p.getMapWithNamesAndCountOfFigures());
 
+/*
 
         BattleShip2 b = new BattleShip2();
         Ship ship = new Ship(4);
         Ship ship1 = new Ship(3);
 
         ListOfShips listOfShips = new ListOfShips();
-        /*b.addShipsToField();
-        b.printField2();
-        System.out.println();*/
-
 
         b.addShipToField(ship);
         b.printField2();
         System.out.println();
         b.addShipToField(ship1);
-
-
-
         b.printField2();
         System.out.println(ship.getShip().length);
+*/
 
 
 

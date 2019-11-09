@@ -14,16 +14,9 @@ public class Picture {
         this.map = new HashMap();
     }
 
-    public List getList() {
-        return list;
-    }
-
-    public List addToList(Figure figure) {
+    public void addToList(Figure figure) {
         list.add(figure);
-        return list;
     }
-
-
 
     public Map getMapWithNamesAndCountOfFigures(){
         for (int i = 0; i < list.size(); i++) {
