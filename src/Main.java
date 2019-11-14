@@ -28,7 +28,7 @@ public class Main {
         System.out.println(p.getMapWithNamesAndCountOfFigures());
         //Task4
         System.out.println("===TASK 4===");
-        BattleShip b = new BattleShip();
+        BattleShip b = new BattleShip(20, 2);
         b.getField();
         b.printField();
         //Task5

@@ -12,17 +12,17 @@ public class ListOfShips {
         this.list = new ArrayList<>();
     }
 
-    public List addShipsToList() {
-        list.add(new Ship(4));
-        list.add(new Ship(3));
-        list.add(new Ship(3));
-        list.add(new Ship(2));
-        list.add(new Ship(2));
-        list.add(new Ship(2));
-        list.add(new Ship(1));
-        list.add(new Ship(1));
-        list.add(new Ship(1));
-        list.add(new Ship(1));
+    public List addShipsToList(int multiply) {
+        list.add(new Ship(4 * multiply));
+        list.add(new Ship(3 * multiply));
+        list.add(new Ship(3 * multiply));
+        list.add(new Ship(2 * multiply));
+        list.add(new Ship(2 * multiply));
+        list.add(new Ship(2 * multiply));
+        list.add(new Ship(1 * multiply));
+        list.add(new Ship(1 * multiply));
+        list.add(new Ship(1 * multiply));
+        list.add(new Ship(1 * multiply));
         return list;
     }
 

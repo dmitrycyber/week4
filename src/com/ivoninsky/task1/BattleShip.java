@@ -8,10 +8,14 @@ public class BattleShip {
     private int[][] field;
     private Random random = new Random();
     private List list;
+    private int sizeOfField;
+    private int shipsSizeMultiplier;
 
-    public BattleShip() {
-        this.field = new int[10][10];
+
+    public BattleShip(int sizeOfField, int shipsSizeMultiplier) {
         this.list = new ArrayList<>();
+        this.sizeOfField = sizeOfField;
+        this.shipsSizeMultiplier = shipsSizeMultiplier;
     }
 
     public void printField() {
@@ -37,6 +41,7 @@ public class BattleShip {
     }
 
     public int[][] getField() {
+        field = new int[sizeOfField][sizeOfField];
         addShipsToField();
         return field;
     }
@@ -47,9 +52,9 @@ public class BattleShip {
         int direction = random.nextInt(2);
         if (direction == 1) {
             while (true) {
-                elementPositionI = random.nextInt(10);
-                elementPositionJ = random.nextInt(10);
-                if (elementPositionJ + ship.getShip().length > 10) {
+                elementPositionI = random.nextInt(10*shipsSizeMultiplier);
+                elementPositionJ = random.nextInt(10*shipsSizeMultiplier);
+                if (elementPositionJ + ship.getShip().length > sizeOfField) {
                     continue;
                 } else if (isCellsInaccessibleInHorizontalDirection(elementPositionI, elementPositionJ, ship)) {
                     continue;
@@ -73,9 +78,9 @@ public class BattleShip {
             return field;
         } else {
             while (true) {
-                elementPositionI = random.nextInt(10);
-                elementPositionJ = random.nextInt(10);
-                if (elementPositionI + ship.getShip().length > 10) {
+                elementPositionI = random.nextInt(10*shipsSizeMultiplier);
+                elementPositionJ = random.nextInt(10*shipsSizeMultiplier);
+                if (elementPositionI + ship.getShip().length > sizeOfField) {
                     continue;
                 } else if (isCellsInaccessibleInVerticalDirection(elementPositionI, elementPositionJ, ship)) {
                     continue;
@@ -128,7 +133,7 @@ public class BattleShip {
         int incrementedI = elementPositionI + incrementI;
         int incrementedJ = elementPositionJ + incrementJ;
         if (
-                (incrementedI >= 0 && incrementedI < 10) && (incrementedJ >= 0 && incrementedJ < 10)) {
+                (incrementedI >= 0 && incrementedI < sizeOfField) && (incrementedJ >= 0 && incrementedJ < sizeOfField)) {
 
             field[incrementedI][incrementedJ] = 2;
         }
@@ -136,7 +141,7 @@ public class BattleShip {
 
     private void addShipsToField() {
         ListOfShips listOfShips = new ListOfShips();
-        listOfShips.addShipsToList();
+        listOfShips.addShipsToList(shipsSizeMultiplier);
         for (int i = 0; i < 10; i++) {
             addShipToField(listOfShips.getNextShip());
         }
